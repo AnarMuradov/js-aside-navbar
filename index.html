@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        min-height: 100vh;
+        position: relative;
+      }
+      img {
+        position: absolute;
+        height: 100px;
+        width: 100px;
+        transition: 100ms;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      src="https://good-nature-blog-uploads.s3.amazonaws.com/uploads/2015/08/Henry-Holdsworth-Wolf-1-YNP-scaled.jpg"
+      alt=""
+    />
+
+    <script>
+      const img = document.querySelector("img");
+      let x = 0;
+      let y = 0;
+
+      document.body.addEventListener("keydown",function (e) {
+        switch (e.code) {
+          case "KeyA":
+            x -= 20;
+            img.style.left = x + "px";
+            break;
+
+          case "KeyD":
+            x += 20;
+            img.style.left = x + "px";
+            break;
+
+          case "KeyW":
+            y -= 20;
+            img.style.top = y + "px";
+            break;
+
+          case "KeyS":
+            y += 20;
+            img.style.top = y + "px";
+            break;
+
+          default:
+            break;
+        }
+        console.log(e.code);
+      });
+    </script>
+  </body>
+</html>
